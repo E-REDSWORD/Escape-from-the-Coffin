@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الهروب من التابوت | RedSword</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?
+  family=Tajawal:wght@800;900&family=Amiri&family=Lateef&
+  family=Almarai:wght@800&display=swap" rel="stylesheet">
   <style>
   	.banner2-img {
       width: 100%;
@@ -57,53 +60,111 @@
     }
     
     /* ---------- الرأس والتذييل ---------- */
-    header {
-      margin-bottom: 30px;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    
-    .logo {
-      font-size: 3.5rem;
-      color: black;
-      text-shadow: 0 0 15px rgba(240, 219, 79, 0.5);
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      color: var(--redsword-red);
-      text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
-      margin: 10px 0;
-      line-height: 0.3;
-    }
-    
-    .subtitle {
-      font-size: 1.1rem;
-      opacity: 0.8;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 0.6;
-    }
-    
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      padding: 15px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-      width: 100%;
-      max-width: 1000px;
-      border-top: 1px solid rgba(196, 30, 30, 0.3);
-    }
+   /* ---------- الرأس والتذييل بشفافية عالية ---------- */
+header {
+  font-family: 'Tajawal', sans-serif;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0);       /* شفافية كاملة */
+  border-bottom: 2px solid rgba(255, 111, 97, 0.9); /* لون دموي باهت قليلاً */
+  text-align: center;
+}
+
+/* شعار اللعبة بخط مزخرف وحدود واضحة */
+.logo {
+  font-family: 'Almarai', sans-serif;
+  font-size: 4rem;
+  color: #ffffff;                     /* أبيض بارز */
+  -webkit-text-stroke: 2px #ff6f61;   /* حد خارجي بلون دموي */
+  text-shadow:
+    0 0 8px #ff6f61,
+    0 0 12px #ff6f61,
+    2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* أيقونة السيف تبقى ذهبية مع ضلال خفيفة */
+.logo-container .fas.fa-swords {
+  font-size: 2.5rem;
+  color: #f1c40f;
+  text-shadow:
+    0 0 5px #f1c40f,
+    0 0 10px #f1c40f;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ff6f61;
+  }
+  to {
+    text-shadow:
+      0 0 15px #ffffff,
+      0 0 25px #ff6f61;
+  }
+}
+
+/* ---------- العنوان الرئيسي بخلفية شفافة وحدود واضحة ---------- */
+h1 {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0);       /* شفافية كاملة */
+  color: #ffffff;                     /* أبيض بارز */
+  -webkit-text-stroke: 1.5px #ff6f61; /* حد دموي */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* ---------- العناوين الفرعية بخط مزخرف وحدود ---------- */
+h2 {
+  font-family: 'Lateef', cursive;
+  font-size: 2rem;
+  background: transparent;
+  color: #ff6f61;                     /* دموي بارز */
+  -webkit-text-stroke: 1px #ffffff;   /* حد أبيض */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 15px 0;
+  text-align: center;
+}
+
+/* ---------- النص الوصفي بخلفية شفافة وحدود --------- */
+.subtitle {
+  font-family: 'Amiri', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background: transparent;
+  color: #ffffff;                     /* أبيض بارز */
+  -webkit-text-stroke: 0.8px #ff6f61; /* حد دموي خفيف */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* ---------- التذييل بخلفية شفافة ونص بارز ---------- */
+footer {
+  font-family: 'Lateef', cursive;
+  background: transparent;
+  color: #dddddd;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid rgba(255, 111, 97, 0.6);
+}
+
+footer .redsword-link {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  -webkit-text-stroke: 1px #ff6f61;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .redsword-link:hover {
+  color: #ff6f61;
+}
     
     .redsword-link {
       color: var(--redsword-red);
@@ -153,6 +214,9 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
+      display: flex; /* لتوسيط المحتوى الجديد */
+      justify-content: center;
+      align-items: center;
     }
     
     .coffin-button:hover {
@@ -167,12 +231,20 @@
     }
     
     .coffin-button[disabled] {
-      opacity: 0.4;
+      opacity: 0.8; /* جعل التابوت المعطل أكثر وضوحًا */
       cursor: default;
       transform: none !important;
       box-shadow: 
         inset 0 0 15px rgba(0, 0, 0, 0.4),
         0 3px 8px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    /* تصميم التابوت بعد الكشف عن محتواه */
+    .coffin-button.coffin-revealed {
+        background: linear-gradient(145deg, #3a1705 0%, #2e1201 100%); /* مظهر أغمق "مفتوح" */
+        box-shadow:
+            inset 0 0 10px rgba(0, 0, 0, 0.6),
+            0 3px 8px rgba(0, 0, 0, 0.6) !important;
     }
     
     .coffin-button::after {
@@ -235,8 +307,7 @@
       left: 0;
       width: 100%; 
       height: 100%;
-      background: url('index.html') no-repeat center center;
-      background-size: cover;
+      background: rgba(0, 0, 0, 0.45); /* خلفية شفافة داكنة */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -320,7 +391,7 @@
       top: 15%;
       left: 50%;
       transform: translateX(-50%);
-      color: #fff;
+      color: gold;
       text-align: center;
       white-space: pre-line;
       /* تم التعديل: تصغير حجم الخط بنسبة 40% */
@@ -503,6 +574,46 @@
       background-color: #a01515;
       transform: translateY(-2px);
     }
+
+    /* ---------- تصميم المحتوى المكشوف داخل التابوت في الشبكة ---------- */
+    .coffin-button .revealed-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center;
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none; /* لضمان عدم التفاعل مع هذا المحتوى */
+    }
+
+    .coffin-button .revealed-emoji {
+      font-size: 3rem; /* حجم الإيموجي داخل التابوت المكشوف */
+      line-height: 0.7;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .coffin-button .revealed-text {
+      font-size: 0.9rem; /* حجم النص داخل التابوت المكشوف */
+      line-height: 0.95;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    /* تعديلات حجم الخط للشاشات الصغيرة للمحتوى المكشوف */
+    @media (max-width: 600px) {
+      .coffin-button .revealed-emoji {
+        font-size: 1.7rem;
+      }
+      .coffin-button .revealed-text {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -532,7 +643,7 @@
   
   <!-- التابوت المفتوح (مودال) -->
   <div id="modal">
-    <button class="close-btn" onclick="closeModal()">&times;</button>
+    <button class="close-btn">&times;</button> <!-- تم إزالة onclick هنا -->
     <div class="open-coffin">
       <div class="lid"></div>
       <div class="inner"></div>
@@ -575,20 +686,48 @@
       "رأس الغراب", "صرخة الاموات", "نفس الجلاد", "همسة الجحيم"
     ];
     
-    const outcomes = [
-      { text: 'تابوت فارغ\nاحبس عدوك', emoji: '⚰️📥' },
-      { text: 'تابوت ممتلئ\nواصل البحث', emoji: '🧱🧟' },
-      { text: 'مقشة الساحرة\nتحرر زميل لك', emoji: '💀🧹📤' },
-      { text: 'سرب خفافيش\nيحبس زميل لك', emoji: '🦇🌕' },
-      { text: 'شبح مرعب\nيقتلك', emoji: '👻' }
-    ];
+    // تعريف جميع النتائج الممكنة مع توزيعها المطلوب
+    const allOutcomes = [];
+    // 7 توابيت فارغة
+    for (let i = 0; i < 7; i++) allOutcomes.push({ text: 'تابوت فارغ\nاحبس عدوك', emoji: '⚰️📥' });
+    // 3 توابيت ممتلئة
+    for (let i = 0; i < 3; i++) allOutcomes.push({ text: 'تابوت ممتلئ\nواصل البحث', emoji: '🧱🧟' });
+    // 2 توابيت تحتوي على مقشة الساحرة
+    for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'مقشة الساحرة\nتحرر زميل لك', emoji: '💀🧹📤' });
+    // 2 توابيت تحتوي على شبح مرعب
+    for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'شبح مرعب\nيقتلك', emoji: '👻' });
+    // 2 توابيت تحتوي على سرب خفافيش
+    for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'سرب خفافيش\nيحبس زميل لك', emoji: '🦇🌕' });
+
+    // دالة لخلط المصفوفة عشوائياً (Fisher-Yates shuffle)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // تبديل العناصر
+        }
+    }
+
+    // متغيرات لتخزين التابوت الذي تم النقر عليه ونتيجته
+    let lastClickedCoffinBtn = null;
+    let lastClickedOutcome = null;
     
     // تهيئة الصفحة
     document.addEventListener('DOMContentLoaded', () => {
+      shuffleArray(allOutcomes); // خلط النتائج مرة واحدة عند بدء اللعبة
       initGame();
       createFlyingBats();
       // إضافة مستمعي الأحداث لأزرار المساعدة
       document.getElementById('showHelpBtn').addEventListener('click', showHelpModal);
+      
+      // إغلاق المودال بالنقر على أي مكان في الخلفية
+      document.getElementById('modal').addEventListener('click', (event) => {
+          // تأكد من أن النقر كان على خلفية المودال وليس على محتواه الداخلي
+          if (event.target.id === 'modal') {
+              closeModal();
+          }
+      });
+      // إضافة مستمع حدث لزر الإغلاق (X) داخل المودال
+      document.querySelector('#modal .close-btn').addEventListener('click', closeModal);
     });
     
     // إنشاء شبكة التوابيت
@@ -600,10 +739,13 @@
         const coffinBtn = document.createElement('button');
         coffinBtn.className = 'coffin-button';
         coffinBtn.onclick = () => handleCoffinClick(coffinBtn);
+        // تخزين النتيجة المخصصة لهذا التابوت في خاصية بيانات
+        coffinBtn.dataset.outcomeEmoji = allOutcomes[index].emoji;
+        coffinBtn.dataset.outcomeText = allOutcomes[index].text;
         
         coffinBtn.innerHTML = `
           <span class="coffin-text">
-            تابوت<br>${name.split(' ').join('<br>')}<br>(${index + 1}) <!-- تم التعديل: إضافة الترقيم -->
+            تابوت<br>${name.split(' ').join('<br>')}<br>(${index + 1})
           </span>
           <svg class="coffin-lines" viewBox="0 0 140 280"
                xmlns="http://www.w3.org/2000/svg">
@@ -622,11 +764,25 @@
     
     // التعامل مع النقر على تابوت
     function handleCoffinClick(btn) {
-      if (btn.disabled) return;
+      // التحقق مما إذا كان التابوت قد تم كشفه بالفعل
+      const isRevealed = btn.classList.contains('coffin-revealed');
       
-      const outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+      const outcome = {
+          emoji: btn.dataset.outcomeEmoji,
+          text: btn.dataset.outcomeText
+      };
+
+      // تخزين التابوت الذي تم النقر عليه ونتيجته فقط إذا لم يكن مكشوفًا بعد
+      if (!isRevealed) {
+          lastClickedCoffinBtn = btn;
+          lastClickedOutcome = outcome;
+          btn.disabled = true; // تعطيل الزر مؤقتاً أثناء عرض المودال
+      } else {
+          // إذا كان مكشوفاً، لا نغير lastClickedCoffinBtn/Outcome
+          // ولكن نضمن أن المودال سيُعرض بمحتواه الصحيح
+      }
+
       showModal(outcome);
-      btn.disabled = true;
       
       // إضافة تأثير صوتي
       const audio = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAAAAAAA=');
@@ -653,6 +809,40 @@
       
       // إعادة التمرير
       document.body.style.overflow = '';
+
+      // تحديث محتوى التابوت في الشبكة فقط إذا كان هناك تابوت تم النقر عليه لأول مرة
+      if (lastClickedCoffinBtn && lastClickedOutcome) {
+          // إزالة المحتوى الأصلي للتابوت (النص والخطوط)
+          const coffinTextSpan = lastClickedCoffinBtn.querySelector('.coffin-text');
+          const coffinLinesSvg = lastClickedCoffinBtn.querySelector('.coffin-lines');
+          if (coffinTextSpan) coffinTextSpan.remove();
+          if (coffinLinesSvg) coffinLinesSvg.remove();
+
+          // إنشاء عناصر جديدة للمحتوى المكشوف
+          const revealedContentDiv = document.createElement('div');
+          revealedContentDiv.className = 'revealed-content';
+
+          const revealedEmojiDiv = document.createElement('div');
+          revealedEmojiDiv.className = 'revealed-emoji';
+          revealedEmojiDiv.innerHTML = lastClickedOutcome.emoji;
+
+          const revealedTextDiv = document.createElement('div');
+          revealedTextDiv.className = 'revealed-text';
+          // استبدال \n بـ <br> لعرض الأسطر الجديدة بشكل صحيح
+          revealedTextDiv.innerHTML = lastClickedOutcome.text.replace(/\n/g, '<br>'); 
+
+          revealedContentDiv.appendChild(revealedEmojiDiv);
+          revealedContentDiv.appendChild(revealedTextDiv);
+
+          lastClickedCoffinBtn.appendChild(revealedContentDiv);
+          lastClickedCoffinBtn.classList.add('coffin-revealed'); // إضافة فئة لتمييز التابوت المكشوف
+          
+          lastClickedCoffinBtn.disabled = false; // إعادة تفعيل الزر ليصبح قابلاً للنقر مرة أخرى
+
+          // إعادة تعيين المتغيرات استعدادًا للنقرة التالية
+          lastClickedCoffinBtn = null;
+          lastClickedOutcome = null;
+      }
     }
     
     // عرض شاشة شرح اللعبة
