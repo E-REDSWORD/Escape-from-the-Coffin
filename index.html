@@ -9,6 +9,142 @@
   family=Tajawal:wght@800;900&family=Amiri&family=Lateef&
   family=Almarai:wght@800&display=swap" rel="stylesheet">
   <style>
+    /* إضافة أنماط لصفحة البداية */
+    #start-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('category.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      transition: opacity 0.5s ease;
+    }
+    
+    .start-content {
+      background: rgba(0, 0, 0, 0.7);
+      border: 3px solid var(--redsword-red);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+    
+    .start-title {
+      font-family: 'Almarai', sans-serif;
+      font-size: 3.5rem;
+      color: #f1c40f;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px rgba(196, 30, 30, 0.7);
+    }
+    
+    .version-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .version-btn {
+      background: linear-gradient(145deg, #c41e1e, #8a1515);
+      color: white;
+      border: none;
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .version-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(145deg, #d92323, #9a1717);
+    }
+    
+    .version-btn:active {
+      transform: translateY(0);
+    }
+    
+    .version-btn i {
+      font-size: 2.2rem;
+    }
+    
+    .start-description {
+      font-family: 'Amiri', serif;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #f5f5f5;
+      margin: 20px 0;
+    }
+    
+    /* أنماط الزر الجديد */
+    .copy-btn {
+      background: linear-gradient(145deg, #1e3ac4, #151d8a);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 20px auto;
+    }
+    
+    .copy-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(145deg, #233ad9, #171d9a);
+    }
+    
+    .copy-btn:active {
+      transform: translateY(0);
+    }
+    
+    .copy-btn i {
+      font-size: 1.3rem;
+    }
+    
+    /* رسالة التأكيد */
+    #copy-notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(30, 167, 86, 0.9);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      z-index: 3000;
+      transform: translateX(150%);
+      transition: transform 0.4s ease;
+    }
+    
+    #copy-notification.show {
+      transform: translateX(0);
+    }
+    
+    /* بقية الأنماط كما هي */
   	.banner2-img {
       width: 100%;
       max-width: 1500px;
@@ -151,6 +287,9 @@ footer {
   padding: 20px;
   text-align: center;
   border-top: 2px solid rgba(255, 111, 97, 0.6);
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 footer .redsword-link {
@@ -193,11 +332,42 @@ footer .redsword-link:hover {
       .logo {
         font-size: 1.8rem;
       }
+      
+      .version-btn {
+        font-size: 1.4rem;
+        padding: 15px;
+      }
+      
+      .start-title {
+        font-size: 2.5rem;
+      }
+      
+      .copy-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
     }
     
     @media (max-width: 400px) {
       body {
         padding: 10px;
+      }
+      
+      .start-content {
+        padding: 20px;
+      }
+      
+      .version-btn {
+        font-size: 1.2rem;
+      }
+      
+      .start-title {
+        font-size: 2rem;
+      }
+      
+      .copy-btn {
+        font-size: 0.9rem;
+        padding: 10px 15px;
       }
     }
     
@@ -617,6 +787,30 @@ footer .redsword-link:hover {
   </style>
 </head>
 <body>
+  <!-- صفحة البداية -->
+  <div id="start-page">
+    <div class="start-content">
+      <h1 class="start-title">الهروب من التابوت</h1>
+      <p class="start-description">
+        اختر نسخة اللعبة التي ترغب في لعبها. كل نسخة تحتوي على عدد مختلف من التوابيت وتوزيع مختلف للمحتويات. 
+        توابيت أكثر تعني تحدياً أكبر ومزيداً من التشويق!
+      </p>
+      
+      <div class="version-buttons">
+        <button class="version-btn" onclick="startGame(16)">
+          <i class="fas fa-coffin"></i> نسخة 16 تابوت
+        </button>
+        <button class="version-btn" onclick="startGame(20)">
+          <i class="fas fa-skull"></i> نسخة 20 تابوت
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- إشعار النسخ -->
+  <div id="copy-notification">
+    <i class="fas fa-check-circle"></i> تم نسخ التوابيت المتبقية إلى الحافظة!
+  </div>
 	
   <!-- رأس الصفحة -->
   <header>
@@ -640,6 +834,11 @@ footer .redsword-link:hover {
 
   <!-- شبكة التوابيت -->
   <div class="grid-container" id="grid"></div>
+  
+  <!-- زر نسخ التوابيت المتبقية -->
+  <button id="copyRemainingBtn" class="copy-btn">
+    <i class="fas fa-copy"></i> نسخ التوابيت المتبقية
+  </button>
   
   <!-- التابوت المفتوح (مودال) -->
   <div id="modal">
@@ -678,26 +877,66 @@ footer .redsword-link:hover {
   </footer>
 
   <script>
-    // بيانات اللعبة
-    const names = [
-      "صرخات الليل", "مقبرة الجن", "عذاب الارواح", "افعى القبور",
-      "حطب جهنم", "عظام الجن", "زئير الهلاك", "صرير الكفن",
-      "دم الخفافيش", "العنة الأبدية", "لعنة الحياة", "الافاعي المسكونة",
-      "رأس الغراب", "صرخة الاموات", "نفس الجلاد", "همسة الجحيم"
-    ];
-    
-    // تعريف جميع النتائج الممكنة مع توزيعها المطلوب
-    const allOutcomes = [];
-    // 7 توابيت فارغة
-    for (let i = 0; i < 7; i++) allOutcomes.push({ text: 'تابوت فارغ\nاحبس عدوك', emoji: '⚰️📥' });
-    // 3 توابيت ممتلئة
-    for (let i = 0; i < 3; i++) allOutcomes.push({ text: 'تابوت ممتلئ\nواصل البحث', emoji: '🧱🧟' });
-    // 2 توابيت تحتوي على مقشة الساحرة
-    for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'مقشة الساحرة\nتحرر زميل لك', emoji: '💀🧹📤' });
-    // 2 توابيت تحتوي على شبح مرعب
-    for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'شبح مرعب\nيقتلك', emoji: '👻' });
-    // 2 توابيت تحتوي على سرب خفافيش
-    for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'سرب خفافيش\nيحبس زميل لك', emoji: '🦇🌕' });
+    // دالة لبدء اللعبة حسب النسخة المختارة
+    function startGame(version) {
+      // إخفاء صفحة البداية
+      document.getElementById('start-page').style.display = 'none';
+      
+      // تحديد بيانات اللعبة حسب النسخة المختارة
+      let names, allOutcomes;
+      
+      if (version === 16) {
+        // بيانات اللعبة لنسخة 16 تابوت
+        names = [
+          "صرخات الليل", "مقبرة الجن", "عذاب الارواح", "افعى القبور",
+          "حطب جهنم", "عظام الجن", "زئير الهلاك", "صرير الكفن",
+          "دم الخفافيش", "العنة الأبدية", "لعنة الحياة", "الافاعي المسكونة",
+          "رأس الغراب", "صرخة الاموات", "نفس الجلاد", "همسة الجحيم"
+        ];
+        
+        // تعريف جميع النتائج الممكنة مع توزيعها للنسخة 16
+        allOutcomes = [];
+        // 7 توابيت فارغة
+        for (let i = 0; i < 7; i++) allOutcomes.push({ text: 'تابوت فارغ\nاحبس عدوك', emoji: '⚰️📥' });
+        // 3 توابيت ممتلئة
+        for (let i = 0; i < 3; i++) allOutcomes.push({ text: 'تابوت ممتلئ\nواصل البحث', emoji: '🧱🧟' });
+        // 2 توابيت تحتوي على مقشة الساحرة
+        for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'مقشة الساحرة\nتحرر زميل لك', emoji: '💀🧹📤' });
+        // 2 توابيت تحتوي على شبح مرعب
+        for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'شبح مرعب\nيقتلك', emoji: '👻' });
+        // 2 توابيت تحتوي على سرب خفافيش
+        for (let i = 0; i < 2; i++) allOutcomes.push({ text: 'سرب خفافيش\nيحبس زميل لك', emoji: '🦇🌕' });
+      } else {
+        // بيانات اللعبة لنسخة 20 تابوت
+        names = [
+          "صرخات الليل", "مقبرة الجن", "عذاب الارواح", "افعى القبور",
+          "حطب جهنم", "عظام الجن", "زئير الهلاك", "صرير الكفن",
+          "دم الخفافيش", "العنة الأبدية", "لعنة الحياة", "الافاعي المسكونة",
+          "رأس الغراب", "صرخة الاموات", "نفس الجلاد", "همسة الجحيم",
+          "ظلام الأبد", "لعنة الدم", "صرخة الأشباح", "عالم الظلام"
+        ];
+        
+        // تعريف جميع النتائج الممكنة مع توزيعها للنسخة 20
+        allOutcomes = [];
+        // 7 توابيت فارغة
+        for (let i = 0; i < 7; i++) allOutcomes.push({ text: 'تابوت فارغ\nاحبس عدوك', emoji: '⚰️📥' });
+        // 3 توابيت ممتلئة
+        for (let i = 0; i < 3; i++) allOutcomes.push({ text: 'تابوت ممتلئ\nواصل البحث', emoji: '🧱🧟' });
+        // 4 توابيت تحتوي على مقشة الساحرة
+        for (let i = 0; i < 4; i++) allOutcomes.push({ text: 'مقشة الساحرة\nتحرر زميل لك', emoji: '💀🧹📤' });
+        // 3 توابيت تحتوي على شبح مرعب
+        for (let i = 0; i < 3; i++) allOutcomes.push({ text: 'شبح مرعب\nيقتلك', emoji: '👻' });
+        // 3 توابيت تحتوي على سرب خفافيش
+        for (let i = 0; i < 3; i++) allOutcomes.push({ text: 'سرب خفافيش\nيحبس زميل لك', emoji: '🦇🌕' });
+      }
+      
+      // تهيئة اللعبة بالبيانات المحددة
+      initGame(names, allOutcomes);
+      createFlyingBats();
+      
+      // إظهار زر نسخ التوابيت المتبقية
+      document.getElementById('copyRemainingBtn').style.display = 'flex';
+    }
 
     // دالة لخلط المصفوفة عشوائياً (Fisher-Yates shuffle)
     function shuffleArray(array) {
@@ -713,11 +952,11 @@ footer .redsword-link:hover {
     
     // تهيئة الصفحة
     document.addEventListener('DOMContentLoaded', () => {
-      shuffleArray(allOutcomes); // خلط النتائج مرة واحدة عند بدء اللعبة
-      initGame();
-      createFlyingBats();
       // إضافة مستمعي الأحداث لأزرار المساعدة
       document.getElementById('showHelpBtn').addEventListener('click', showHelpModal);
+      
+      // إضافة مستمع حدث لزر نسخ التوابيت المتبقية
+      document.getElementById('copyRemainingBtn').addEventListener('click', copyRemainingCoffins);
       
       // إغلاق المودال بالنقر على أي مكان في الخلفية
       document.getElementById('modal').addEventListener('click', (event) => {
@@ -731,7 +970,10 @@ footer .redsword-link:hover {
     });
     
     // إنشاء شبكة التوابيت
-    function initGame() {
+    function initGame(names, allOutcomes) {
+      // خلط النتائج
+      shuffleArray(allOutcomes);
+      
       const grid = document.getElementById('grid');
       grid.innerHTML = '';
       
@@ -742,6 +984,9 @@ footer .redsword-link:hover {
         // تخزين النتيجة المخصصة لهذا التابوت في خاصية بيانات
         coffinBtn.dataset.outcomeEmoji = allOutcomes[index].emoji;
         coffinBtn.dataset.outcomeText = allOutcomes[index].text;
+        // تخزين اسم التابوت ورقمه
+        coffinBtn.dataset.coffinName = name;
+        coffinBtn.dataset.coffinNumber = index + 1;
         
         coffinBtn.innerHTML = `
           <span class="coffin-text">
@@ -876,7 +1121,47 @@ footer .redsword-link:hover {
         bgElements.appendChild(bat);
       }
     }
+    
+    // دالة نسخ التوابيت المتبقية
+    function copyRemainingCoffins() {
+      const remainingCoffins = [];
+      const coffinButtons = document.querySelectorAll('.coffin-button');
+      
+      coffinButtons.forEach(button => {
+        // التحقق مما إذا كان التابوت لم يتم فتحه بعد
+        if (!button.classList.contains('coffin-revealed')) {
+          const coffinName = button.dataset.coffinName;
+          const coffinNumber = button.dataset.coffinNumber;
+          remainingCoffins.push(`(${coffinNumber}) تابوت ${coffinName}`);
+        }
+      });
+      
+      // ترتيب التوابيت حسب رقمها
+      remainingCoffins.sort((a, b) => {
+        const numA = parseInt(a.match(/\((\d+)\)/)[1]);
+        const numB = parseInt(b.match(/\((\d+)\)/)[1]);
+        return numA - numB;
+      });
+      
+      // إنشاء نص للنسخ
+      const textToCopy = remainingCoffins.join('\n');
+      
+      // نسخ النص إلى الحافظة
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          // إظهار رسالة تأكيد
+          const notification = document.getElementById('copy-notification');
+          notification.classList.add('show');
+          
+          // إخفاء الرسالة بعد 3 ثوان
+          setTimeout(() => {
+            notification.classList.remove('show');
+          }, 3000);
+        })
+        .catch(err => {
+          console.error('فشل في نسخ النص: ', err);
+        });
+    }
   </script>
 </body>
 </html>
-
